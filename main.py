@@ -1,4 +1,5 @@
 import pickle
+import numpy as np
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -11,9 +12,21 @@ def index():
 
 @app.route('/explore',methods=['GET','POST'])
 def explore():
-    prediction = model.predict([[7.0, 400.0, 2.0009, 200.777, 600.022, 190.0, 8.2, 6.02]])
-    print(prediction)
-    return render_template('explore.html')
+    features = [
+        request.form.get('D.O. (mg/l)'),
+        request.form.get('CONDUCTIVITY (µmhos/cm)'),
+        request.form.get('B.O.D. (mg/l)'),
+        request.form.get('WaterHeadhgt(max)'),
+        request.form.get('WaterHeadhgt(min)'),
+        request.form.get('Avg Wave Hindcast'),
+        request.form.get('Avg Wave Energy Flux'),
+        request.form.get('Avg Wave Energy Power')
+    ]
+  
+    # Make predictions
+    prediction = model.predict([features])
+    #print(prediction)
+    return render_template('explore.html', prediction_text=prediction)
 
 
 if __name__=='__main__':

@@ -13,22 +13,18 @@
       box-sizing: border-box;
       font-family: "Poppins", sans-serif;
     }
-    body {
-      overflow-x: hidden; /*of was hidden*/
+    /*body {
+      overflow-x: hidden; 
       background: #fff;
       min-height: 100vh;
-    }
+    }*/
     #header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
       padding: 30px 100px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: linear-gradient(rgb(231, 219, 196), #fff);
-      z-index: 10000;
+      
     }
     #header .logo {
       color: #094b65;
@@ -57,6 +53,7 @@
       background: #094b65;
       color: #fff;
     }
+   
 </style>
 <body>
     <header id="header">
@@ -76,5 +73,24 @@
           <li><a href="#">contact</a></li>
         </ul>
       </header>
+      <div id="input">
+        <form action="{{url_for('explore')}}" method="post">
+          <input type="text" name="D.O. (mg/l)" placeholder="Enter Dissolved oxygen"> </input>
+          <input type="text" name="CONDUCTIVITY (µmhos/cm)" placeholder="Enter Wate Conductivity"> </input>
+          <input type="text" name="B.O.D. (mg/l)" placeholder="Enter B.O.D"> </input>
+          <input type="text" name="WaterHeadhgt(max)" placeholder="Enter max Water-head height"> </input>
+          <input type="text" name="WaterHeadhgt(min)" placeholder="Enter min Water-head height"> </input>
+          <input type="text" name="Avg Wave Hindcast" placeholder="Enter Wave Hindcast"> </input>
+          <input type="text" name="Avg Wave Energy Flux" placeholder="Enter Wave Energy Flux"> </input>
+          <input type="text" name="Avg Wave Energy Power" placeholder="Enter Wave Energy Power"> </input>
+          <button type="submit">Predict</button>
+          <h3>HydroPower Plant can be built with:</h3>
+          <ul>
+            <li><strong>Reservoir Capacity:</strong> {{ prediction_text[0][0] }}</li>
+            <li><strong>Dam Height:</strong> {{ prediction_text[0][1] }}</li>
+            <li><strong>Reservoir Area:</strong> {{ prediction_text[0][2] }}</li>
+          </ul>
+        </form>
+      </div>
 </body>
 </html>
