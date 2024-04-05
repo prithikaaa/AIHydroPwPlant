@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hydrostorm</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:wght@900&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      overflow-x: hidden; /*of was hidden*/
+      background: #fff;
+      min-height: 100vh;
+    }
+    #header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(rgb(231, 219, 196), #fff);
+      z-index: 10000;
+    }
+    #header .logo {
+      color: #094b65;
+      font-weight: 500;
+      font-size: 3em;
+      text-decoration: none;
+    }
+    #header ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #header ul li {
+      list-style: none;
+      font-size: 1.4em;
+      margin-left: 20px;
+    }
+    #header ul li a {
+      text-decoration: none;
+      padding: 6px 15px;
+      color: #094b65;
+      border-radius: 20px;
+    }
+    #header ul li a:hover,
+    #header ul li a.active {
+      background: #094b65;
+      color: #fff;
+    }
+    section {
+      top: 10em;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    section::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to top, #094b65, transparent);
+      z-index: 10;
+    }
+    section img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    section #text {
+      position: absolute;
+      color: #96999a;
+      font-size: 10vw;
+      text-align: center;
+      line-height: 0.55em;
+      transform: translateY(-50%);
+    }
+    section #text span {
+      font-size: 0.2em;
+      letter-spacing: 2px;
+      font-weight: 400;
+    }
+    #btn {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 30px;
+      background: rgb(72, 69, 118);
+      color: #fff;
+      font-size: 1.6em;
+      font-weight: 500;
+      letter-spacing: 2px;
+      border-radius: 40px;
+      transform: translateY(100px);
+    }
+    .sec {
+      position: relative;
+      top: 10em;
+      padding: 100px;
+      background: #094b65;
+      color: #fff;
+    }
+    .sec h2 {
+      font-size: 3.5em;
+      margin-bottom: 10px;
+    }
+    .sec p {
+      font-size: 1pm;
+      color: #fff;
+    }
+    .sec2 {
+      position: relative;
+      top: 10em;
+      padding: 100px;
+      background: #bdbfc0;
+      color: #fff;
+    }
+  </style>
+  <body>
+    <header id="header">
+      <a
+        href="https://www.energy.gov/eere/water/types-hydropower-plants"
+        class="logo"
+        ><img src="\static\logo3.png" height="50" /> Hydrostorm</a
+      >
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">about</a></li>
+        <li>
+          <a href="https://www.energy.gov/eere/water/types-hydropower-plants"
+            >destination</a
+          >
+        </li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </header>
+    <section>
+      <h2 id="text"><span>Let's explore some new</span><br />Innovations</h2>
+      <img src="\static\bird1.png" id="bird1" />
+      <img src="\static\bird2.png" id="bird2" />
+      <img src="\static\forest.png" id="dam" style="top: 15em" />
+      <img src="\static\rocks.png" id="rocks" style="top: 10em" />
+      <a href="/explore" id="btn">Explore</a>
+
+      <img src="\static\water.png" id="waves" />
+    </section>
+    <div class="sec">
+      <h2>HydroPower Plant</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda
+        excepturi explicabo eum dolorem, doloribus reprehenderit quos, sequi
+        beatae quibusdam debitis repellat fugiat! Odit vel ut ducimus illum, eum
+        facere voluptate quos eligendi illo ad ratione ex totam est, laboriosam,
+        voluptates nobis quo voluptatibus rem minus! Repudiandae, animi rem!
+        Fugiat, assumenda.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit neque
+        dolorem quasi! Libero accusamus doloribus itaque voluptatum illo
+        mollitia vitae commodi alias ipsa suscipit consectetur laboriosam
+        minima, nihil corporis repudiandae quis tempora corrupti perspiciatis
+        nam animi sapiente recusandae illum obcaecati. Delectus sapiente sequi
+        blanditiis sint similique veniam doloremque enim rerum quaerat expedita!
+        Ipsam aperiam incidunt cumque numquam, ullam eaque obcaecati magni sunt
+        commodi tempora molestias nemo nihil unde esse pariatur distinctio
+        laudantium doloremque aut corporis maxime natus dolorem fugit.
+        Veritatis, in. Ex quibusdam doloremque necessitatibus pariatur a ipsum
+        quasi officiis dignissimos. Ab provident dolores, officiis sint
+        accusamus possimus, vero dolore ipsum ea similique nulla laborum
+        consequuntur cumque maxime mollitia. At libero placeat doloribus
+        distinctio obcaecati impedit eaque labore beatae. Dolorem eveniet,
+        impedit porro, consequuntur fugiat officiis tenetur et vitae veritatis,
+        laboriosam corporis! Illo at molestias, neque enim iste in a sequi
+        minima quis tempora quos unde reprehenderit ducimus quibusdam, eius
+        dolorem aperiam maxime cum! Cumque minus dignissimos magni
+        exercitationem itaque amet illum mollitia ex error adipisci alias
+        repudiandae similique sint, quaerat pariatur earum excepturi inventore
+        et consequuntur corporis ad nesciunt! Temporibus, tenetur suscipit
+        voluptatem, animi, ipsa alias dolorem eius asperiores ullam sed
+        corrupti! Molestias pariatur non dolore sed quae odit voluptatibus
+        doloribus deserunt fuga aspernatur quas aut qui fugit tempora, impedit
+        adipisci laboriosam recusandae doloremque consequatur ratione. Quidem
+        dolore impedit maiores numquam beatae error fugiat doloremque officia
+        debitis quasi, vel modi fuga maxime animi corrupti quae assumenda
+        aspernatur atque, aliquam nostrum veniam. Maxime eaque facilis atque
+        ipsum harum quas quaerat eos incidunt culpa iste. Facere commodi quas
+        harum quod ad nulla voluptates? Alias, molestiae? Eos animi reiciendis
+        quibusdam ipsum soluta ipsam perspiciatis facilis delectus, natus
+        doloremque repellat blanditiis nihil distinctio illum non commodi
+        adipisci, laborum, fugit accusamus exercitationem id! Rem consectetur
+        nulla doloremque alias tempore vitae odit. Illo asperiores aliquam
+        porro? Eum dolores harum quidem consequatur! Ratione, quidem
+      </p>
+    </div>
+    <div class="sec2">@copyright act under 15253.</div>
+    <script>
+      let text = document.getElementById("text");
+      let bird1 = document.getElementById("bird1");
+      let bird2 = document.getElementById("bird2");
+      let btn = document.getElementById("btn");
+      let rocks = document.getElementById("rocks");
+      let dam = document.getElementById("dam");
+      let waves = document.getElementById("waves");
+      let header = document.getElementById("header");
+      window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        text.style.top = 25 + value * -0.1 + "%";
+        bird1.style.top = value * -1.5 + "px";
+        bird1.style.left = value * 1.2 + "px";
+        bird2.style.top = value * -1.5 + "px";
+        bird2.style.left = value * -1.5 + "px";
+        btn.style.marginTop = value * 1.5 + "px";
+        rocks.style.top = value * -0.12 + "px";
+        forest.style.top = value * 0.25 + "px";
+        header.style.top = value * 0.5 + "px";
+      });
+    </script>
+  </body>
+</html>
