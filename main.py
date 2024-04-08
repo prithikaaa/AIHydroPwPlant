@@ -25,7 +25,8 @@ def explore():
   
     # Make predictions
     prediction = model.predict([features])
-    #print(prediction)
+    print([features])
+    print(prediction)
     return render_template('explore.html', prediction_text=prediction)
 
 
