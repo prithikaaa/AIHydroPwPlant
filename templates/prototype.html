@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
+  </head>
+  <style>
+     @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:wght@900&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body{
+        background: #bdbfc0;
+    }
+    /*body {
+      overflow-x: hidden; 
+      background: #fff;
+      min-height: 100vh;
+    }*/
+    #header {
+      padding: 30px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(rgb(231, 219, 196), #fff);
+      
+    }
+    #header .logo {
+      color: #094b65;
+      font-weight: 500;
+      font-size: 3em;
+      text-decoration: none;
+    }
+    #header ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #header ul li {
+      list-style: none;
+      font-size: 1.4em;
+      margin-left: 20px;
+    }
+    #header ul li a {
+      text-decoration: none;
+      padding: 6px 15px;
+      color: #094b65;
+      border-radius: 20px;
+    }
+    #header ul li a:hover,
+    #header ul li a.active {
+      background: #094b65;
+      color: #fff;
+    }
+    #imageContainer {
+      display: inline-block;
+      justify-content: center;
+      margin: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #imageContainer img {
+      max-width: 600px;
+      max-height: 600px;
+      margin: 40px 80px;
+    }
+    .indicator{
+        margin: 0 40%;
+        background-color: rgb(4, 51, 4);
+        color: #fff;
+    }
+    .light-blue-bullet {
+      list-style-type: none; /* Remove default bullet */
+      padding-left: 20px; 
+      position: relative; 
+    }
+
+    .light-blue-bullet:before {
+     content: '\2022'; /* Unicode for bullet character */
+     color: lightblue; /* Blue color */
+  
+    }
+    .red-bullet {
+       list-style-type: none;
+       padding-left: 20px;
+       position: relative;
+    }
+
+    .red-bullet:before {
+       content: '\2022';
+       color: red;
+    }
+    .yellow-bullet {
+       list-style-type: none;
+       padding-left: 20px;
+       position: relative;
+    }
+
+     .yellow-bullet:before {
+        content: '\2022';
+        color: yellow;
+    }
+    .sec2 {
+      position: relative;
+      text-align: center;
+      background: #bdbfc0;
+      color: black;
+      padding: 100px;
+    }
+  </style>
+  <body>
+    <header id="header">
+        <a
+          href="/"
+          class="logo"
+          ><img src="\static\logo3.png" height="50" /> Hydrostorm</a
+        >
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/explore" class="active">Explore</a></li>
+          <li>
+            <a href="https://www.energy.gov/eere/water/types-hydropower-plants"
+              >Reference</a
+            >
+          </li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </header>
+    <h1>Upload Image</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" id="imageUpload" accept="image/*" />
+      <button type="button" onclick="submitImage()">Submit</button>
+    </form>
+    <div id="imageContainer">
+      <!-- Uploaded image will be displayed here -->
+    </div>
+    <div class="indicator">
+        <ul>
+            <li class="light-blue-bullet">Potential Dam Sites</li>
+            <li class="yellow-bullet">Under Construction</li>
+            <li class="red-bullet">Completed</li>
+        </ul>
+    </div>
+    <div class="sec2">@copyright act under 15253.</div>
+    <script>
+      function submitImage() {
+        var fileInput = document.getElementById("imageUpload");
+        var file = fileInput.files[0];
+
+        if (file) {
+          var reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = function (e) {
+            var uploadedImage = document.createElement("img");
+            uploadedImage.src = e.target.result;
+            uploadedImage.alt = "Uploaded Image";
+            uploadedImage.classList.add("uploaded-image");
+            var imageContainer = document.getElementById("imageContainer");
+            imageContainer.insertBefore(uploadedImage, imageContainer.firstChild);
+              
+          };
+        }
+
+        // Show additional images
+        showAdditionalImages();
+      }
+
+      function showAdditionalImages() {
+        // Paths to additional images
+        var imagePath1 = "/static/dammid.png"; // Change 'image1.jpg' to the correct path of your first additional image
+        var imagePath2 = "/static/damstatus.png"; // Change 'image2.jpg' to the correct path of your second additional image
+
+        // Create img elements for additional images
+        var image1 = document.createElement("img");
+        image1.src = imagePath1;
+        image1.alt = "Additional Image 1";
+        image1.classList.add("additional-image");
+        document.getElementById("imageContainer").appendChild(image1);
+
+        var image2 = document.createElement("img");
+        image2.src = imagePath2;
+        image2.alt = "Additional Image 2";
+        image2.classList.add("additional-image");
+        document.getElementById("imageContainer").appendChild(image2);
+      }
+    </script>
+  </body>
+</html>

@@ -35,6 +35,11 @@ def explore():
     return render_template('explore.html', prediction_text=prediction, prediction_type=typepred)
 
 
+@app.route('/explore/prototype',methods=['GET','POST'])
+def prototype():
+    return render_template('prototype.html')
+
+
  #, prediction_type=typepred
 if __name__=='__main__':
     app.run(debug=True)
