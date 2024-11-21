@@ -5,6 +5,7 @@
 ## **Overview**
 
 **HydroStorm** is a web platform that leverages **machine learning (ML)** to revolutionize the planning and design of hydropower plants along rivers. It uses advanced **satellite image processing** to analyze map patterns and identify potential construction sites, offering actionable insights for civil engineers and architects.
+Article: https://medium.com/@hydrostorm1000/hydrostorm-d685c4fe4bd6
 
 ---
 
